@@ -15,40 +15,27 @@
   </head>
   <body>
     <div class="container">
+        <div class="row">&nbsp;</div>
+    </div>
+    <div class="container">
         <div class="row">
-            <h1>Beep Beep!</h1>
         </div>
         <div class="row">
             <div class="well">
-                <canvas id="buyers" width="" height=""></canvas>
+                <h1>Beep Beep! I'm an app</h1>
            </div>
         </div>
     </div>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript for Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+    <!-- Latest compiled and minified JavaScript for AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 
     <!-- D3.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
-
-    <script>
-        var buyerData = {
-            labels : ["January","February","March","April","May","June"],
-            datasets : [
-                {
-                    fillColor : "rgba(172,194,132,0.4)",
-                    strokeColor : "#ACC26D",
-                    pointColor : "#fff",
-                    pointStrokeColor : "#9DB86D",
-                    data : [203,156,99,251,305,247]
-                }
-            ]
-        }
-        var buyers = document.getElementById('buyers').getContext('2d');
-        new Chart(buyers).Line(buyerData);
-    </script>
   </body>
 </html>
