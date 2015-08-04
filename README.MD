@@ -28,6 +28,13 @@
 
     sudo pip install sqlalchemy
 
+5. Selenium
+    https://code.google.com/p/selenium/wiki/ChromeDriver
+    Using ChromeDriver
+    -Robert
+    python functional_tests.py
+
+
 
 
 
