@@ -1,9 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Robert Donovan <admin@mixfin.com>
 
-RUN apk add --update git && \
-    rm -rf /var/cache/apk/*
-
 # Install dependencies
 RUN apt-get update -y
 RUN apt-get install -y git curl python-pip python-dev build-essential
