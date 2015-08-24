@@ -1,24 +1,39 @@
-FROM ubuntu:14.04
+############################################################
+# Dockerfile to build MIXFIN Python app
+# Based on Ubuntu
+# had problems with AMI
+############################################################
+
+# Set the base image to Ubuntu
+FROM ubuntu
+
+# File Author / Maintainer
 MAINTAINER Robert Donovan <admin@mixfin.com>
 
-# Install dependencies
-RUN apt-get update -y
-RUN apt-get install -y git curl python-pip python-dev build-essential
-RUN pip install --upgrade pip
-RUN pip install --upgrade virtualenv
+# Add the application resources URL
+RUN echo "deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -sc) main universe" >> /etc/apt/sources.list
 
+# Update the sources list
+RUN apt-get update
 
-# Install app
-#RUN rm -rf /var/www/*
-#ADD src /var/www
+# Install basic applications
+RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 
-# Configure apache
-#RUN a2enmod rewrite
-#RUN chown -R www-data:www-data /var/www
-#ENV APACHE_RUN_USER www-data
-#ENV APACHE_RUN_GROUP www-data
-#ENV APACHE_LOG_DIR /var/log/apache2
+# Install Python and Basic Python Tools
+RUN apt-get install -y python python-dev python-distribute python-pip
 
+# Copy the application folder inside the container
+RUN git clone https://github.com/mixfinancial/app.git
+
+# Get pip to download and install requirements:
+RUN pip install -r /app/requirements.txt
+
+# Expose ports
 EXPOSE 80
 
-CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
+# Set the default directory where CMD will execute
+WORKDIR /app
+
+# Set the default command to execute when creating a new container
+# i.e. using CherryPy to serve the application
+CMD python server.py
