@@ -1,8 +1,13 @@
-FROM ubuntu:14.04
+FROM robertdcatx/mixfin
+MAINTAINER Robert Donovan <admin@mixfin.com>
+
+RUN apk add --update git && \
+    rm -rf /var/cache/apk/*
 
 # Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y git curl Flask
+RUN apt-get install -y git curl
+RUN pip3 install --upgrade pip && \
 
 # Install app
 #RUN rm -rf /var/www/*
