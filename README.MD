@@ -6,6 +6,13 @@
 
 2. Dockerfile is setup
 
+3. To rebuild Dockerfile
+curl -H "Content-Type: application/json" --data '&#123;"build": true&#125;' -X POST https://registry.hub.docker.com/u/robertdcatx/app/trigger/62bc04d4-7a94-4f60-97a1-5677914d0da0/
+
+
+## Docker pull command
+docker pull robertdcatx/app
+
 
 1. Install Flask 
 
