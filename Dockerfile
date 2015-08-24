@@ -1,4 +1,4 @@
-FROM robertdcatx/mixfin
+FROM ubuntu:14.04
 MAINTAINER Robert Donovan <admin@mixfin.com>
 
 RUN apk add --update git && \
@@ -6,8 +6,10 @@ RUN apk add --update git && \
 
 # Install dependencies
 RUN apt-get update -y
-RUN apt-get install -y git curl
-RUN pip3 install --upgrade pip && \
+RUN apt-get install -y git curl python-pip python-dev build-essential
+RUN pip install --upgrade pip
+RUN pip install --upgrade virtualenv
+
 
 # Install app
 #RUN rm -rf /var/www/*
