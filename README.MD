@@ -1,8 +1,10 @@
 ## WELCOME TO THE APP!!!!!
 
-
-
 ## Installation
+
+1.  All the python needed libraries are listed inside of the requirements.txt
+
+2. Dockerfile is setup
 
 
 1. Install Flask 
