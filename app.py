@@ -8,7 +8,7 @@ def hello_world():
 
 @app.route('/layout')
 def about():
-  return render_template('layout.html')
+    return render_template('layout.html')
 
 #@app.route('/about')
 #def about():

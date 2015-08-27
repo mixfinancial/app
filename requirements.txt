@@ -1,6 +1,13 @@
-Flask==0.10.1
+# Python Requirements.txt file to install all required python modules for the 2Weeks Application
+# sudo pip install -r requirements.txt
+
+flask
+Flask-PyMongo
+Flask-Social
+pylint
+coverage
+Flask-RESTful
 Flask-HTTPAuth==2.2.1
-Flask-RESTful==0.2.12
 Flask-SQLAlchemy==1.0
 Flask-WTF==0.10.0
 Jinja2==2.7.3
